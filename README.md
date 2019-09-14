@@ -2,17 +2,17 @@
 
 ##Compile
 1. compile them directly
-    $ gcc server.c -o server
-    $ gcc client.c -o client
+    -$ gcc server.c -o server
+    -$ gcc client.c -o client
 
 2. use makefile
-    $ make
+    -$ make
 
 ##Transfer
 
-Server side `$ ./server [port] [file-name]`
-Client side `$ ./client [port] [server-IP]`
-Execute server first or client first.
+-Server side `$ ./server [port] [file-name]`
+-Client side `$ ./client [port] [server-IP]`
+-Execute server first or client first.
 
 ###Example
 ```shell=
