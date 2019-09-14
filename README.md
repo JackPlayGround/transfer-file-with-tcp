@@ -9,7 +9,7 @@
     $ make
 
 ##Transfer
-Server side $ ./server [port] [file-name]
+###Server side $ ./server [port] [file-name]
 Client side $ ./client [port] [server-IP]
 Execute server first or client first.
 
