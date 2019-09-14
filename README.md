@@ -5,8 +5,8 @@
     $ gcc server.c -o server  
     $ gcc client.c -o client
 
-2. use makefile
-    -$ make
+2. use makefile  
+    $ make
 
 ## Transfer
 
@@ -24,7 +24,7 @@ Transfer completed.
 
 ```shell=
 $ ./client 9999 127.0.0.1
-trying connect server...
+trying connect to server...
 Connected successfully.
 Ready to download 'test.jpg'[52.61 KB]...
 Compeleted.
