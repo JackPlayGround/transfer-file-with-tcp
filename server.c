@@ -78,10 +78,15 @@ int main(int argc, char *argv[]) {
     if(wr < 0){
         error("Error sending file size");
     }
-    printf("Connect successfully. Ready to transfer \'%s\'[%.2lf KB]...\n", filename, (double)st.st_size/1024);
+    
+    if(st.st_size/1024 < 1024){
+        printf("Connect successfully. Ready to transfer \'%s\'[%.2lf KB]...\n", filename, (double)st.st_size/1024);
+    } else {
+        printf("Connect successfully. Ready to transfer \'%s\'[%.2lf MB]...\n", filename, (double)st.st_size/1048576);
+    }
+
     
     while(1) {
-        usleep(100);
         len = fread(buffer, 1, BUFFSIZE, fp);		    //read data   
         if(len > 0){
             write(cli_sockfd, buffer, len);

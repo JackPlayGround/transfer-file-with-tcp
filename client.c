@@ -54,15 +54,18 @@ int main(int argc, char* argv[]) {
     if(r<0){
         error("Error reading file size");
     }
-    fsiz = atoi(fsiz_str);                  //convert file size from char to long int
-    printf("Ready to download \'%s\'[%.2lfKB]...\n", buffer, (double)fsiz/1024);
+    fsiz = atoi(fsiz_str);              //convert file size from char to long int
+    if(fsiz/1024 < 1024){
+        printf("Ready to download \'%s\'[%.2lf KB]...\n", buffer, (double)fsiz/1024);
+    } else {
+        printf("Ready to download \'%s\'[%.2lf MB]...\n", buffer, (double)fsiz/1048576);
+    }
     fp = fopen(buffer,"ab");                  //open a binary file, which name was received from server
     if(fp == NULL){
         error("Error opening file");
     }
     
     while(r = read(sockfd, buffer, BUFFSIZE)) {
-        printf("%d \n",r);
         if(r < 0){
             error("Error reading trunk");
         }
