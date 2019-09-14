@@ -1,7 +1,7 @@
 # Transferring-file-with-tcp
 
 ##Compile
-1. compile them directly
+1. compile them directly  
     $ gcc server.c -o server  
     $ gcc client.c -o client
 
