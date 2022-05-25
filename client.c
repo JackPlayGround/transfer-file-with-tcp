@@ -72,7 +72,9 @@ int main(int argc, char* argv[]) {
         fwrite(buffer, 1, r, fp);  //write data into the binary file
         bzero(buffer, BUFFSIZE);
     }
+    
     printf("Compeleted.\n");
+    close(cli_sockfd);
     close(sockfd);
     fclose(fp);
     return 0;
